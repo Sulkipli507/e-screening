@@ -13,7 +13,15 @@ class PatientController extends Controller
     }
 
     public function store(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'gender' => 'required',
+            'date_of_birth' => 'required',
+            'age' => 'required',
+            'address' => 'required'
+        ]);
         Patient::create($request->all());
+        return redirect()->route('patient-index');
     }
 
     public function index(){
@@ -25,10 +33,16 @@ class PatientController extends Controller
         $patient = Patient::where('id',$id)->first();
         return view('admin.patient.edit', compact('patient'));
     }
-
+    
     public function update(Request $request, $id){
         $patient = Patient::where('id', $id)->first();
         $patient->update($request->all());
+        return redirect()->route('patient-index');
+    }
+
+    public function destroy($id){
+        $patient = Patient::where('id', $id)->first();
+        $patient->delete();
         return redirect()->route('patient-index');
     }
 }

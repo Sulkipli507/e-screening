@@ -24,7 +24,11 @@
                         <td>{{ $item->address }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('patient-edit', $item->id) }}">Edit</a>
-                            <a class="btn btn-info" href="">Detail</a>
+                            <form action="{{route("patient-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit" >HAPUS</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

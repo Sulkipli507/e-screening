@@ -23,3 +23,4 @@ Route::post('/patient/store', [PatientController::class, 'store'])->name('patien
 Route::get('/patient/index', [PatientController::class, 'index'])->name('patient-index');
 Route::get('/patient/edit/{id}', [PatientController::class, 'edit'])->name('patient-edit');
 Route::put('/patient/update/{id}',[PatientController::class, 'update'])->name('patient-update');
+Route::delete('/patient/delete/{id}', [PatientController::class, 'destroy'])->name('patient-delete');
