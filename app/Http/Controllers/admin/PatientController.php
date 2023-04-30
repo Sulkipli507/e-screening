@@ -25,4 +25,10 @@ class PatientController extends Controller
         $patient = Patient::where('id',$id)->first();
         return view('admin.patient.edit', compact('patient'));
     }
+
+    public function update(Request $request, $id){
+        $patient = Patient::where('id', $id)->first();
+        $patient->update($request->all());
+        return redirect()->route('patient-index');
+    }
 }

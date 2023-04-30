@@ -22,3 +22,4 @@ Route::get('/patient/create', [PatientController::class, 'create'])->name('patie
 Route::post('/patient/store', [PatientController::class, 'store'])->name('patient-store');
 Route::get('/patient/index', [PatientController::class, 'index'])->name('patient-index');
 Route::get('/patient/edit/{id}', [PatientController::class, 'edit'])->name('patient-edit');
+Route::put('/patient/update/{id}',[PatientController::class, 'update'])->name('patient-update');

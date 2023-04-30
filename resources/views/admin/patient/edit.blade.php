@@ -1,7 +1,8 @@
 @extends('backend.master')
 @section('content')
-<form class="tab-wizard wizard-circle wizard vertical" action="{{ route('patient-store') }}" method="post">
+<form class="tab-wizard wizard-circle wizard vertical" action="{{ route('patient-update', $patient->id) }}" method="post">
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
