@@ -3,31 +3,25 @@
 <div class="card shadow mb-4"> 
     <div class="card-body">
         <div class="mb-3">
-            <a href="{{ route('patient-create') }}"><button class="btn btn-primary">Tambah data</button></a>
+            <a href="{{ route('disease-create') }}"><button class="btn btn-primary">Tambah data</button></a>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nama lengkap</th>
-                        <th>Jenis kelamin</th>
-                        <th>Tanggal lahir</th>
-                        <th>Usia</th>
-                        <th>Alamat</th>
+                        <th>No</th>
+                        <th>Nama penyakit</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($patients as $item)
+                    @foreach ($diseases as $key => $item)
                     <tr>
+                        <td>{{ $key + 1 }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->gender }}</td>
-                        <td>{{ $item->date_of_birth }}</td>
-                        <td>{{ $item->age }}</td></td>
-                        <td>{{ $item->address }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('patient-edit', $item->id) }}">Edit</a>
-                            <form action="{{route("patient-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">
+                            <a class="btn btn-info" href="{{ route('disease-edit', $item->id) }}">Edit</a>
+                            <form action="{{ route('disease-delete', $item->id ) }}" method="post" style="display:inline" class="form-check-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit" >HAPUS</button>

@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Disease;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
     public function create(){
-        return view('admin.patient.create');
+        $disease = Disease::all();
+        return view('admin.patient.create', compact('disease'));
     }
+    //sampai dsni
 
     public function store(Request $request){
         $this->validate($request, [
