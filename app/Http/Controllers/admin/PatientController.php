@@ -13,7 +13,7 @@ class PatientController extends Controller
         $disease = Disease::all();
         return view('admin.patient.create', compact('disease'));
     }
-    //sampai dsni
+
 
     public function store(Request $request){
         $this->validate($request, [
@@ -21,8 +21,10 @@ class PatientController extends Controller
             'gender' => 'required',
             'date_of_birth' => 'required',
             'age' => 'required',
-            'address' => 'required'
+            'address' => 'required',
+            'disease_id' => 'required',
         ]);
+
         Patient::create($request->all());
         return redirect()->route('patient-index');
     }
@@ -33,8 +35,9 @@ class PatientController extends Controller
     }
 
     public function edit($id){
+        $disease = Disease::all();
         $patient = Patient::where('id',$id)->first();
-        return view('admin.patient.edit', compact('patient'));
+        return view('admin.patient.edit', compact('patient','disease'));
     }
     
     public function update(Request $request, $id){

@@ -14,6 +14,7 @@ class Patient extends Model
         'date_of_birth',
         'age',
         'address',
+        'disease_id',
     ];
 
     public function disease(){

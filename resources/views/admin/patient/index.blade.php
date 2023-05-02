@@ -14,6 +14,7 @@
                         <th>Tanggal lahir</th>
                         <th>Usia</th>
                         <th>Alamat</th>
+                        <th>Penyakit</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <td>{{ $item->date_of_birth }}</td>
                         <td>{{ $item->age }}</td></td>
                         <td>{{ $item->address }}</td>
+                        <td>{{ $item->disease->name }}</td>
                         <td>
                             <a class="btn btn-info" href="{{ route('patient-edit', $item->id) }}">Edit</a>
                             <form action="{{route("patient-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">
