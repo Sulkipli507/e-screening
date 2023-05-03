@@ -13,9 +13,22 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item">
-      <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+    <a class="nav-link" href="index.html">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('patient-index') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Data pasien</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('disease-index') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Jenis penyakit</span>
+    </a>
   </li>
 
   <!-- Divider -->

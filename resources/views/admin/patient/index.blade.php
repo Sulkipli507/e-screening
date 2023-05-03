@@ -28,11 +28,15 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->disease->name }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('patient-edit', $item->id) }}">Edit</a>
+                            <a class="btn btn-info btn-circle" href="{{ route('patient-edit', $item->id) }}">
+                                <i class="fas fa-edit"></i>
+                            </a>
                             <form action="{{route("patient-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit" >HAPUS</button>
+                                <button class="btn btn-danger btn-circle" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>
