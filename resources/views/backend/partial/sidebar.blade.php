@@ -20,13 +20,13 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ route('patient-index') }}">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-user-md"></i>
         <span>Data pasien</span>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ route('disease-index') }}">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-stethoscope"></i>
         <span>Jenis penyakit</span>
     </a>
   </li>

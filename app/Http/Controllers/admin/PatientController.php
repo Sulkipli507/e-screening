@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Disease;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use \Barryvdh\DomPDF\Facade\Pdf;
 
 class PatientController extends Controller
 {
@@ -13,7 +14,6 @@ class PatientController extends Controller
         $disease = Disease::all();
         return view('admin.patient.create', compact('disease'));
     }
-
 
     public function store(Request $request){
         $this->validate($request, [
@@ -51,4 +51,10 @@ class PatientController extends Controller
         $patient->delete();
         return redirect()->route('patient-index');
     }
+
+    public function downloadPdf(){
+        $patients = Patient::all();
+        $pdf = PDF::loadView('admin.pdf.patient', compact('patients'));
+        return $pdf->download('patient.pdf');
+    } 
 }
