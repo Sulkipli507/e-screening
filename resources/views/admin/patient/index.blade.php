@@ -15,6 +15,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Nama lengkap</th>
                         <th>Jenis kelamin</th>
                         <th>Tanggal lahir</th>
@@ -25,8 +26,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($patients as $item)
+                    @foreach ($patients as $key => $item)
                     <tr>
+                        <td>{{ $key + 1 }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->gender }}</td>
                         <td>{{ $item->date_of_birth }}</td>

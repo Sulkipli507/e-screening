@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\DiseaseController;
+use App\Http\Controllers\admin\DiseaseController;
 use App\Http\Controllers\admin\PatientController;
+use App\Http\Controllers\admin\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,6 @@ Route::get('/disease/index', [DiseaseController::class, 'index'])->name('disease
 Route::get('/disease/edit/{id}', [DiseaseController::class, 'edit'])->name('disease-edit');
 Route::put('/disease/update/{id}', [DiseaseController::class, 'update'])->name('disease-update');
 Route::delete('/disease/delete/{id}', [DiseaseController::class, 'destroy'])->name('disease-delete');
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

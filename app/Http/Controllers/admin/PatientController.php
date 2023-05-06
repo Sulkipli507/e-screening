@@ -55,6 +55,6 @@ class PatientController extends Controller
     public function downloadPdf(){
         $patients = Patient::all();
         $pdf = PDF::loadView('admin.pdf.patient', compact('patients'));
-        return $pdf->download('patient.pdf');
+        return $pdf->download('Data-pasien.pdf');
     } 
 }

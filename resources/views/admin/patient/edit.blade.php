@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <label >Date of Birth :</label>
+                <label >Tanggal lahir :</label>
                 <input name="date_of_birth" type="date" class="form-control" placeholder="Select Date" value="{{ $patient->date_of_birth }}" required>
             </div>
         </div>
