@@ -34,7 +34,7 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <label >Date of Birth :</label>
+                <label >Tanggal lahir :</label>
                 <input name="date_of_birth" type="date" class="form-control" placeholder="Select Date" required >
 
                 @error('date_of_birth')
@@ -72,14 +72,8 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label>Penyakit :</label>
-                <select name="disease_id" class="custom-select form-control" required>
-                    <option label="Pilih jenis penyakit"></option>
-                    @foreach ($disease as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                    @endforeach    
-                </select>
-
-                @error('disease_id')
+                <input name="disease" type="text" class="form-control" required>
+                @error('disease')
                     <span class="text-danger">
                         <strong>{{ $message }}</strong>
                     </span>

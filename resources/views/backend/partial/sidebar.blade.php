@@ -24,12 +24,6 @@
         <span>Data pasien</span>
     </a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{ route('disease-index') }}">
-        <i class="fa fa-stethoscope"></i>
-        <span>Jenis penyakit</span>
-    </a>
-  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

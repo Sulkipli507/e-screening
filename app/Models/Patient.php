@@ -14,11 +14,7 @@ class Patient extends Model
         'date_of_birth',
         'age',
         'address',
-        'disease_id',
+        'disease'
     ];
-
-    public function disease(){
-        return $this->belongsTo(Disease::class);
-    }
 }
 

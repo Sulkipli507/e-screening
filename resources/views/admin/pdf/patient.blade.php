@@ -30,7 +30,7 @@
                         <td>{{ $item->date_of_birth }}</td>
                         <td>{{ $item->age }}</td></td>
                         <td>{{ $item->address }}</td>
-                        <td>{{ $item->disease->name }}</td>
+                        <td>{{ $item->disease }}</td>
                     </tr>
                     @endforeach
                 </tbody>

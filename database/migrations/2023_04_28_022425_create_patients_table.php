@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date_of_birth');
             $table->integer('age');
             $table->string('address');
-            $table->foreignId("disease_id")->constrained("diseases")->onUpdate("cascade")->onDelete("cascade");
+            $table->string('disease');
             $table->timestamps();
         });
     }
