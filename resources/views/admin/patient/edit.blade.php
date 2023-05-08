@@ -15,8 +15,8 @@
                 <label>Jenis kelamin :</label>
                 <select name="gender" class="custom-select form-control" required>
                     <option>{{ $patient->gender }}</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
         </div>
@@ -24,12 +24,6 @@
             <div class="form-group">
                 <label >Tanggal lahir :</label>
                 <input name="date_of_birth" type="date" class="form-control" placeholder="Select Date" value="{{ $patient->date_of_birth }}" required>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <label >Usia :</label>
-                <input name="age" type="number" class="form-control" value="{{ $patient->age }}" required>
             </div>
         </div>
         <div class="col-md-12">

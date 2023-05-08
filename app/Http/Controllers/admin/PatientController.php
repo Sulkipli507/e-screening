@@ -17,7 +17,6 @@ class PatientController extends Controller
             'name' => 'required',
             'gender' => 'required',
             'date_of_birth' => 'required',
-            'age' => 'required',
             'address' => 'required',
         ]);
         Patient::create($request->all());

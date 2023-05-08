@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.master');
+    return view('auth.login');
 });
 
 Route::get('/patient/create', [PatientController::class, 'create'])->name('patient-create');

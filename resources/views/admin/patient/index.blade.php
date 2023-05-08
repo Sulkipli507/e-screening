@@ -3,7 +3,7 @@
 <div class="card shadow mb-4"> 
     <div class="card-body">
         <div class="mb-3">
-            <a href="{{ route('patient-create') }}"><button class="btn btn-primary">Tambah data</button></a>
+            <a href="{{ route('patient-create') }}"><button class="btn btn-info btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></button></a>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -32,7 +32,7 @@
                         <td>{{ $item->disease }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
-                            <a class="btn btn-info btn-circle" href="{{ route('patient-edit', $item->id) }}">
+                            <a class="btn btn-warning btn-circle" href="{{ route('patient-edit', $item->id) }}">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <form action="{{route("patient-delete", $item->id)}}" method="post" style="display:inline" class="form-check-inline">

@@ -20,8 +20,8 @@
             <div class="form-group">
                 <label>Jenis kelamin :</label>
                 <select name="gender" class="custom-select form-control" required>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
                 </select>
 
                 @error('gender')
@@ -38,18 +38,6 @@
                 <input name="date_of_birth" type="date" class="form-control" placeholder="Select Date" required >
 
                 @error('date_of_birth')
-                    <span class="text-danger">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label >Usia :</label>
-                <input name="age" type="number" class="form-control" required>
-                @error('age')
                     <span class="text-danger">
                         <strong>{{ $message }}</strong>
                     </span>
