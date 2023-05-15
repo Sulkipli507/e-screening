@@ -20,7 +20,7 @@ class PatientController extends Controller
             'address' => 'required',
         ]);
         Patient::create($request->all());
-        return redirect()->route('patient-index');
+        return redirect()->route('patient-index')->with('status', 'Sukses insert data pasien');
     }
 
     public function index(Request $request){
