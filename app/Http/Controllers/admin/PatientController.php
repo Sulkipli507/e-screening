@@ -46,6 +46,6 @@ class PatientController extends Controller
     public function destroy($id){
         $patient = Patient::where('id', $id)->first();
         $patient->delete();
-        return redirect()->route('patient-index');
+        return redirect()->route('patient-index')->with('status', 'Sukses hapus data pasien');
     }
 }
