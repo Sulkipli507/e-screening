@@ -40,7 +40,7 @@ class PatientController extends Controller
     public function update(Request $request, $id){
         $patient = Patient::where('id', $id)->first();
         $patient->update($request->all());
-        return redirect()->route('patient-index');
+        return redirect()->route('patient-index')->with('status', 'Sukses update data pasien');
     }
 
     public function destroy($id){
