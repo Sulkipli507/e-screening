@@ -19,6 +19,6 @@ class AdministratorSeeder extends Seeder
         $admin->password = \Hash::make('123');
         $admin->role = 'admin';
         $admin->save();
-        $this->command->info("User admin berhasil ditambahkan");     
+        $this->command->info("Admin berhasil ditambahkan");     
     }
 }
