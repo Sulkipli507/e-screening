@@ -24,6 +24,12 @@
         <span>Data pasien</span>
     </a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('user-index') }}">
+        <i class="fa fa-user-circle"></i>
+        <span>Data user</span>
+    </a>
+  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

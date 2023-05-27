@@ -1,4 +1,4 @@
 @extends('backend.master')
 @section('content')
-    <h3>Hello, {{ Auth::user()->name }} Welcome back !</h3>
+    <h3>Hello, {{ Auth::user()->role }} Welcome back !</h3>
 @endsection
