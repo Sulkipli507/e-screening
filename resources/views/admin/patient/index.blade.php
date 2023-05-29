@@ -2,9 +2,11 @@
 @section('content')
 <div class="card shadow mb-4"> 
     <div class="card-body">
+        @if (Auth::user()->role == 'perawat')
         <div class="mb-3">
             <a href="{{ route('patient-create') }}"><button class="btn btn-info btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></button></a>
         </div>
+        @endif
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -17,7 +19,9 @@
                         <th>Alamat</th>
                         <th>Penyakit</th>
                         <th>Tanggal masuk</th>
+                        @if (Auth::user()->role == 'perawat')
                         <th>Action</th>
+                        @endif 
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +35,7 @@
                         <td>{{ $item->address }}</td>
                         <td>{{ $item->disease }}</td>
                         <td>{{ $item->created_at }}</td>
+                        @if (Auth::user()->role == 'perawat')
                         <td>
                             <a class="btn btn-warning btn-circle" href="{{ route('patient-edit', $item->id) }}">
                                 <i class="fas fa-edit"></i>
@@ -43,6 +48,7 @@
                                 </button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

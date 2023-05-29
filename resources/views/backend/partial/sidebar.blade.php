@@ -13,7 +13,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="{{ route('home') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span>
     </a>
@@ -24,13 +24,15 @@
         <span>Data pasien</span>
     </a>
   </li>
+  @if (Auth::user()->role == 'admin')
   <li class="nav-item">
     <a class="nav-link" href="{{ route('user-index') }}">
         <i class="fa fa-user-circle"></i>
         <span>Data user</span>
     </a>
   </li>
-
+  @endif
+  
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
 

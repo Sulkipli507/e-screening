@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Auth::routes();
+Route::match(['GET','POST'], '/register', function(){
+    return redirect('/login');
+})->name('register');
+
 Route::middleware(['auth', 'CheckRole:admin'])->group(function(){
     Route::get('/user/index', [UserController::class, 'index'])->name('user-index');
     Route::get('/user/create', [UserController::class, 'create'])->name('user-create');
@@ -42,7 +47,3 @@ Route::middleware(['auth', 'CheckRole:admin,perawat,pemimpin'])->group(function(
     Route::get('/patient/index', [PatientController::class, 'index'])->name('patient-index');
 });
 
-Auth::routes();
-Route::match(['GET','POST'], '/register', function(){
-    return redirect('/login');
-})->name('register');
