@@ -33,6 +33,7 @@
             <div class="form-group">
                 <label>Role :</label>
                 <select name="role" class="custom-select form-control" required>
+                    <option label="Pilih Role"></option>
                     <option value="admin">Admin</option>
                     <option value="perawat">Perawat</option>
                     <option value="pemimpin">Pemimpin</option>
