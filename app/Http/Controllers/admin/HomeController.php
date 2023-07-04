@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.home');
+        $cAdmin = User::where('role' , 'admin')->count();
+        $cPemimpin = User::where('role', 'pemimpin')->count();
+        $cPerawat = User::where('role', 'perawat')->count();
+        $cUser = User::all()->count();
+
+        return view('admin.dashboard.home', compact('cAdmin','cPemimpin','cPerawat','cUser'));
     }
 }
