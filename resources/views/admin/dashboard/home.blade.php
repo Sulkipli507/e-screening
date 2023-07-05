@@ -85,6 +85,67 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12 col-lg-12">
+                <div class="card shadow mb-4">
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="chart-area">
+                            <canvas id="grafikPasien"  width="400" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+
+    <script>
+        var dataPasien = @json($dataPasien);
+    
+        var labels = [];
+        var values = [];
+    
+        // Menghitung jumlah pasien per penyakit
+        var penyakitData = {};
+        dataPasien.forEach(function(pasien) {
+            if (penyakitData[pasien.disease]) {
+                penyakitData[pasien.disease]++;
+            } else {
+                penyakitData[pasien.disease] = 1;
+            }
+        });
+    
+        // Membuat labels dan values dari data penyakit
+        for (var disease in penyakitData) {
+            labels.push(disease);
+            values.push(penyakitData[disease]);
+        }
+    
+        var ctx = document.getElementById('grafikPasien').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Jumlah Pasien',
+                    data: values,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                elements: {
+                line: {
+                    tension: 0.4
+                }
+            }
+            }
+        });
+    </script>
 @endsection

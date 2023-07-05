@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
+use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,8 @@ class HomeController extends Controller
         $cPemimpin = User::where('role', 'pemimpin')->count();
         $cPerawat = User::where('role', 'perawat')->count();
         $cUser = User::all()->count();
+        $dataPasien = Patient::all();
 
-        return view('admin.dashboard.home', compact('cAdmin','cPemimpin','cPerawat','cUser'));
+        return view('admin.dashboard.home', compact('cAdmin','cPemimpin','cPerawat','cUser','dataPasien'));
     }
 }
