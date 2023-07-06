@@ -30,7 +30,8 @@ class HomeController extends Controller
         $cPerawat = User::where('role', 'perawat')->count();
         $cUser = User::all()->count();
         $dataPasien = Patient::all();
+        $cPatient = Patient::all()->count();
 
-        return view('admin.dashboard.home', compact('cAdmin','cPemimpin','cPerawat','cUser','dataPasien'));
+        return view('admin.dashboard.home', compact('cAdmin','cPemimpin','cPerawat','cUser','dataPasien','cPatient'));
     }
 }
