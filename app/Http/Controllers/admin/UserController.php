@@ -43,4 +43,9 @@ class UserController extends Controller
         $user->update($request->all());
         return redirect()->route('user-index')->with('status', 'Sukses update data user');
     }
+
+    public function editProfile(){
+        $user = User::where('id', auth()->id())->first();
+        return view('admin.user.profil',compact('user'));
+    }
 }

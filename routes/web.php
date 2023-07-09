@@ -45,5 +45,6 @@ Route::middleware(['auth', 'CheckRole:perawat'])->group(function(){
 Route::middleware(['auth', 'CheckRole:admin,perawat,pemimpin'])->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/patient/index', [PatientController::class, 'index'])->name('patient-index');
+    Route::get('/user/profil', [UserController::class, 'editProfile'])->name('user-profile');
 });
 
