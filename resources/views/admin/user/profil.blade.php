@@ -4,7 +4,7 @@
     <div class="col-md-12 col-lg-6 mb-3">
         <div class="card">
             <div class="card-body card-block">
-                <form class="tab-wizard wizard-circle wizard vertical" action="" method="post">
+                <form class="tab-wizard wizard-circle wizard vertical" action="{{ route('user-updateProfile', $user->id) }}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -81,4 +81,14 @@
         </div>
     </div>
 </div>
+
+@if (session('status'))
+    <script>
+        Swal.fire({
+            icon:'success',
+            title:'Sukses!',
+            text:"{{session('status')}}",
+        });
+    </script>
+@endif
 @endsection
