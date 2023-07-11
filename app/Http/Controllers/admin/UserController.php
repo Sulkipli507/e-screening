@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -52,5 +53,15 @@ class UserController extends Controller
         $user = User::where('id', $id)->first();
         $user->update($request->all());
         return redirect()->route('user-profile')->with('status', 'Sukses update profil');
+    }
+
+    public function updatePassword(Request $request, $id){
+        $this->validate($request, [
+            'password' => 'required|confirmed'
+        ]);
+        $user = User::findOrFail($id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->route('user-profile')->with('status', 'Sukses update password');
     }
 }

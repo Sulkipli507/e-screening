@@ -47,7 +47,7 @@
     <div class="col-md-12 col-lg-6">
         <div class="card">
             <div class="card-body card-block">
-                <form class="tab-wizard wizard-circle wizard vertical" action="" method="post">
+                <form class="tab-wizard wizard-circle wizard vertical" action="{{ route('user-updatePassword', $user->id) }}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="row">

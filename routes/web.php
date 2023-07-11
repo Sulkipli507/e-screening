@@ -47,5 +47,6 @@ Route::middleware(['auth', 'CheckRole:admin,perawat,pemimpin'])->group(function(
     Route::get('/patient/index', [PatientController::class, 'index'])->name('patient-index');
     Route::get('/user/profil', [UserController::class, 'editProfile'])->name('user-profile');
     Route::put('/user/updateProfil/{id}', [UserController::class, 'updateProfile'])->name('user-updateProfile');
+    Route::put('/user/updatePassword/{id}', [UserController::class, 'updatePassword'])->name('user-updatePassword');
 });
 
